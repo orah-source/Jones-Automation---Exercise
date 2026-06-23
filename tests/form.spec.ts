@@ -9,7 +9,7 @@ const SCREENSHOT_PATH = path.join(__dirname, '..', 'screenshots', 'before-submit
 
 test.describe('Contact form', () => {
 
-  test.only('full flow - fill form, screenshot, submit and reach thank you page', async ({ page }) => {
+  test('full flow - fill form, screenshot, submit and reach thank you page', async ({ page }) => {
     const formPage = new FormPage(page)
     await formPage.navigate(baseUrl)
     await formPage.fillForm(testData)

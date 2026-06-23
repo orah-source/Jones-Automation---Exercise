@@ -15,13 +15,13 @@ export class FormPage {
 
   constructor(page: Page) {
     this.page = page
-    this.nameInput = page.locator('xpath=//input[@id="name"]')
-    this.emailInput = page.locator('xpath=//input[@id="email"]')
-    this.phoneInput = page.locator('xpath=//input[@id="phone"]')
-    this.companyInput = page.locator('xpath=//input[@id="company"]')
-    this.websiteInput = page.locator('xpath=//input[@id="website"]')
-    this.employeesDropdown = page.locator('xpath=//select[@id="employees"]')
-    this.submitButton = page.locator('xpath=//button[normalize-space()="Request a call back"]')
+    this.nameInput = page.locator('#name')
+    this.emailInput = page.locator('#email')
+    this.phoneInput = page.locator('#phone')
+    this.companyInput = page.locator('#company')
+    this.websiteInput = page.locator('#website')
+    this.employeesDropdown = page.locator('#employees')
+    this.submitButton = page.getByRole('button', { name: 'Request a call back' })
   }
 
   async navigate(url: string): Promise<void> {
@@ -35,7 +35,7 @@ export class FormPage {
     await this.phoneInput.fill(data.phone)
     await this.companyInput.fill(data.company)
     await this.websiteInput.fill(data.website)
-    await this.employeesDropdown.selectOption({ label: data.employees })
+    await this.employeesDropdown.selectOption({ value: data.employees })
   }
 
   async takeScreenshot(screenshotPath: string): Promise<void> {

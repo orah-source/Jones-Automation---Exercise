@@ -7,8 +7,8 @@ export class ThankYouPage {
 
   constructor(page: Page) {
     this.page = page
-    this.heading = page.locator('xpath=//h1[normalize-space()="Thank You!"]')
-    this.subHeading = page.locator('xpath=//h2[contains(@class,"text-center")]')
+    this.heading = page.getByRole('heading', { name: 'Thank You!', level: 1 })
+    this.subHeading = page.locator('h2.text-center')
   }
 
   async waitForPage(): Promise<void> {
