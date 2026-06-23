@@ -50,9 +50,11 @@ test.describe('Contact form', () => {
     const thankYouPage = new ThankYouPage(page)
     await thankYouPage.waitForPage()
 
-    expect(await thankYouPage.isHeadingVisible()).toBe(true)
+    const isHeadingVisible = await thankYouPage.isHeadingVisible()
     const message = await thankYouPage.getSubHeadingText()
-    expect(message.trim()).toBeTruthy()
+
+    expect.soft(isHeadingVisible).toBe(true)
+    expect.soft(message.trim()).toBeTruthy()
     console.log(`Success! Thank You page reached. Message: "${message.trim()}"`)
   })
 
