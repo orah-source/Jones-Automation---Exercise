@@ -1,0 +1,29 @@
+{
+  "name": "jones-automation---exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node automation.ts",
+    "test": "playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oraharon1504-lgtm/Jones-Automation---Exercise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oraharon1504-lgtm/Jones-Automation---Exercise/issues"
+  },
+  "homepage": "https://github.com/oraharon1504-lgtm/Jones-Automation---Exercise#readme",
+  "dependencies": {
+    "@playwright/test": "^1.61.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  }
+}
