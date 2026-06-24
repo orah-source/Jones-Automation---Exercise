@@ -7,8 +7,8 @@ export class ThankYouPage {
 
   constructor(page: Page) {
     this.page = page
-    this.heading = page.getByRole('heading', { name: 'Thank You!', level: 1 })
-    this.subHeading = page.locator('h2.text-center')
+    this.heading = page.locator("xpath=//h1[normalize-space()='Thank You!']")
+    this.subHeading = page.locator("xpath=//h2")
   }
 
   async waitForPage(): Promise<void> {
@@ -16,7 +16,7 @@ export class ThankYouPage {
   }
 
   async getSubHeadingText(): Promise<string> {
-    return (await this.subHeading.textContent()) ?? ''
+    return (await this.subHeading.textContent()) ?? '' //"??" = if the text is null, return an empty string
   }
 
   async isHeadingVisible(): Promise<boolean> {
