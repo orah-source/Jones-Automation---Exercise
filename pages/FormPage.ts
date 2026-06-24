@@ -27,7 +27,6 @@ export class FormPage {
   async navigate(url: string): Promise<void> {
     await this.page.goto(url)
     await this.nameInput.waitFor({ state: 'visible' })
-    console.log('Form page loaded')
   }
 
   async fillForm(data: TestData): Promise<void> {
